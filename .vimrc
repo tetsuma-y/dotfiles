@@ -8,7 +8,6 @@ set shiftwidth=4
 set encoding=utf-8
 set fileencodings=utf-8
 set number
-colorscheme zellner  
 
 set nocompatible
 filetype off
