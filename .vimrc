@@ -28,3 +28,4 @@ Bundle 'rails.vim'
 "Html
 Bundle 'Emmet.vim'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'lilydjwg/colorizer'
