@@ -15,6 +15,8 @@ filetype off
 set rtp+=~/dotfiles/.vim/vundle/
 call vundle#rc()
 
+nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+
 "Vundle
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
