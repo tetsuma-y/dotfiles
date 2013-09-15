@@ -22,6 +22,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
+
 "Ruby
 Bundle 'rails.vim'
 
@@ -29,3 +30,9 @@ Bundle 'rails.vim'
 Bundle 'Emmet.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'lilydjwg/colorizer'
+
+"Color Scheme
+Bundle 'nanotech/jellybeans.vim'
+colorscheme jellybeans 
+:syntax enable
+
