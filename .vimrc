@@ -9,10 +9,14 @@ set expandtab
 set encoding=utf-8
 set fileencodings=utf-8
 set number
-
 set nocompatible
 filetype off
 
+" % jump update
+source $VIMRUNTIME/macros/matchit.vim
+
+
+"Vundle and plugins
 set rtp+=~/dotfiles/.vim/vundle/
 call vundle#rc()
 
