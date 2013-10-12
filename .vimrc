@@ -12,9 +12,12 @@ set number
 set nocompatible
 filetype off
 
+" for gVim
+set guioptions-=T
+set guioptions-=m
+
 " % jump update
 source $VIMRUNTIME/macros/matchit.vim
-
 
 "Vundle and plugins
 set rtp+=~/dotfiles/.vim/vundle/
