@@ -43,7 +43,7 @@ noremap <Leader>ufcr :Unite file_rec -buffer-name=file_rec
 noremap <Leader>uff :UniteWithBufferDir file -buffer-name=file
 noremap <Leader>uffr :UniteWithBufferDir file_rec -buffer-name=file_rece 'thinca/vim-ref'
 
-Bundle 'thinca/vim-uickrun'
+Bundle 'thinca/vim-quickrun'
 Bundle 'vim-scripts/yanktmp.vim'
 
 "Ruby
