@@ -24,14 +24,18 @@ source $VIMRUNTIME/macros/matchit.vim
 set rtp+=~/dotfiles/.vim/vundle/
 call vundle#rc()
 
-"Must plugin
-Bundle 'tpope/vim-commentary'
+"""Must plugin 
+"add operator cmd '\\' for comment
+Bundle 'tpope/vim-commentary' 
 
 "Vundle
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-scripts/yanktmp.vim'
 
+"Filer
+Bundle 'Shougo/vimfiler'
+Bundle 'Shougo/unite.vim'
 "Html
 Bundle 'Emmet.vim'
 Bundle 'cakebaker/scss-syntax.vim'
