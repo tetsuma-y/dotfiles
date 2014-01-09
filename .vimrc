@@ -20,8 +20,6 @@ set guioptions-=m
 " % jump update
 source $VIMRUNTIME/macros/matchit.vim
 
-
-
 "Vundle and plugins
 set rtp+=~/dotfiles/.vim/vundle/
 call vundle#rc()
@@ -29,11 +27,7 @@ call vundle#rc()
 """Must plugin 
 "add operator cmd '\\' for comment
 Bundle 'tpope/vim-commentary' 
-
-"Vundle
 Bundle 'Shougo/neocomplcache'
-Bundle 'thinca/vim-quicrun'
-Bundle 'vim-scripts/yanktmp.vim'
 
 "Vim SourceExplorer
 Bundle 'Source-Explorer-srcexpl.vim'
