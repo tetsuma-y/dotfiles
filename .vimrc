@@ -27,13 +27,11 @@ call vundle#rc()
 """Must plugin 
 "add operator cmd '\\' for comment
 Bundle 'tpope/vim-commentary' 
-Bundle 'Shougo/neocomplcache'
 
-"Vim SourceExplorer
-Bundle 'SrcExpl'
-Bundle 'Trinity'
-Bundle 'The-NERD-tree'
-Bundle 'taglist.vim'
+"Unite IDE
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
+Bundle 'h1mesuke/unite-outline'
 
 "For WEB Develop
 Bundle 'cakebaker/scss-syntax.vim'
@@ -44,11 +42,33 @@ Bundle 'nanotech/jellybeans.vim'
 colorscheme jellybeans 
 :syntax enable
 
-" Open and close all the three plugins on the same time 
-nmap <F8>   :TrinityToggleAll<CR> 
-" Open and close the srcexpl.vim separately 
-nmap <F9>   :TrinityToggleSourceExplorer<CR> 
+""""""""""""""""""""""""""""""""
+"VimFiler Toggle
+""""""""""""""""""""""""""""""""
+nnoremap <F8> :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+autocmd! FileType vimfiler call g:my_vimfiler_settings()
+function! g:my_vimfiler_settings()
+  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
+  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
+endfunction
+
+let s:my_action = { 'is_selectable' : 1 }
+function! s:my_action.func(candidates)
+  wincmd p
+  exec 'split '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_split', s:my_action)
+
+let s:my_action = { 'is_selectable' : 1 }                     
+function! s:my_action.func(candidates)
+  wincmd p
+  exec 'vsplit '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_vsplit', s:my_action)
+
+
+
+
+nmap <F9>   :<CR> 
 " Open and close the taglist.vim separately 
-nmap <F10>  :TrinityToggleTagList<CR> 
-" Open and close the NERD_tree.vim separately 
-nmap <F11>  :TrinityToggleNERDTree<CR> 
