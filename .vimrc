@@ -50,8 +50,8 @@ colorscheme jellybeans
 """"""""""""""""""""""""""""""""
 "VimFiler Toggle
 """"""""""""""""""""""""""""""""
-nnoremap <silent> <F8> <ESC>:VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
-autocmd! FileType vimfiler call g:my_vimfiler_settings()
+nnoremap <silent> <C-K> <ESC>:VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+autocmd! FileType vimfiler call g:my_vimfiler_settings() 
 function! g:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
   nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
@@ -77,4 +77,4 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 "Unite outline Toggle
 """"""""""""""""""""""""""""""""
 let g:unite_split_rule = 'botright'
-noremap <silent> <F9> <ESC>:<C-u>Unite -vertical -winwidth=40 -no-quit outline<CR>
+noremap <silent> <C-L> <ESC>:<C-u>Unite -vertical -winwidth=35 -no-quit outline<CR>
