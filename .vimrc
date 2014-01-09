@@ -30,8 +30,8 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Shougo/neocomplcache'
 
 "Vim SourceExplorer
-Bundle 'Source-Explorer-srcexpl.vim'
-Bundle 'trinity.vim'
+Bundle 'SrcExpl'
+Bundle 'Trinity'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 
