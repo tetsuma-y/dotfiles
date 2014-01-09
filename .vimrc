@@ -17,6 +17,11 @@ filetype off
 set guioptions-=T
 set guioptions-=m
 
+" some key remap
+nnoremap Q <Nop> 
+nnoremap : q:a
+nnoremap / q/a
+
 " % jump update
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -31,7 +36,7 @@ Bundle 'tpope/vim-commentary'
 "Unite IDE
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
-Bundle 'h1mesuke/unite-outline'
+Bundle 'Shougo/unite-outline'
 
 "For WEB Develop
 Bundle 'cakebaker/scss-syntax.vim'
@@ -45,7 +50,7 @@ colorscheme jellybeans
 """"""""""""""""""""""""""""""""
 "VimFiler Toggle
 """"""""""""""""""""""""""""""""
-nnoremap <F8> :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+nnoremap <silent> <F8> <ESC>:VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
 autocmd! FileType vimfiler call g:my_vimfiler_settings()
 function! g:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
@@ -68,7 +73,8 @@ endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
 
 
-
-
-nmap <F9>   :<CR> 
-" Open and close the taglist.vim separately 
+""""""""""""""""""""""""""""""""
+"Unite outline Toggle
+""""""""""""""""""""""""""""""""
+let g:unite_split_rule = 'botright'
+noremap <silent> <F9> <ESC>:<C-u>Unite -vertical -winwidth=40 -no-quit outline<CR>
