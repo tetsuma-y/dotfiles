@@ -39,6 +39,10 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite-outline'
 
+"vimshell
+Bundle 'Shougo/vimshell.vim'
+Bundle 'Shougo/vimproc'
+
 "For WEB Develop
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'lilydjwg/colorizer'
