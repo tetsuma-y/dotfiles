@@ -6,11 +6,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" 表示系
 set encoding=utf-8
 set fileencodings=utf-8
 set number
 set nocompatible
 set list
+set colorcolumn=80
 filetype off
 
 " for gVim
