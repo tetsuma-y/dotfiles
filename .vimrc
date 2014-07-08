@@ -8,7 +8,6 @@ set expandtab
 
 " 表示系
 set encoding=utf-8
-set fileencodings=utf-8
 set number
 set nocompatible
 set list
