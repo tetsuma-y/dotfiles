@@ -72,14 +72,13 @@ map <silent> [Tag]b :tabprevious<CR>
 source $VIMRUNTIME/macros/matchit.vim
 
 "Vundle and plugins
-set rtp+=$HOME/dotfiles/.vim/vundle/
-
 if has('win32') || has('win64')
   let $DOTVIM = expand('$HOME/vimfiles')
 else
   let $DOTVIM = expand('~/.vim')
 endif
 
+set rtp+=$DOTVIM/vundle
 call vundle#rc('$DOTVIM/bundle')
 
 """Must plugin 
