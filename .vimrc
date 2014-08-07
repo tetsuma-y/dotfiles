@@ -2,15 +2,16 @@
 :filetype indent on
 
 " タブ幅の設定
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
+" 表示系
 set encoding=utf-8
-set fileencodings=utf-8
 set number
 set nocompatible
 set list
+set colorcolumn=80
 filetype off
 
 " for gVim
@@ -20,8 +21,52 @@ set guioptions-=m
 " some key remap
 noremap Q <Nop> 
 nnoremap : q:a
-nnoremap / q/a
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+
+" Anywhere SID.
+function! s:SID_PREFIX()
+    return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
+
+" Set tabline.
+function! s:my_tabline()  "{{{
+    let s = ''
+    for i in range(1, tabpagenr('$'))
+        let bufnrs = tabpagebuflist(i)
+        let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+        let no = i  " display 0-origin tabpagenr.
+        let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+        let title = fnamemodify(bufname(bufnr), ':t')
+        let title = '[' . title . ']'
+        let s .= '%'.i.'T'
+        let s .= '%#' . (i == tabpagenr() ?  'TabLineSel' : 'TabLine') . '#'
+        let s .= no . ':' . title
+        let s .= mod
+        let s .= '%#TabLineFill# '
+    endfor
+    let s .= '%#TabLineFill#%T%=%#TabLine#'
+    return s
+endfunction "}}}
+let &tabline = '%!'.  s:SID_PREFIX() .  'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
+
+" The prefix key.
+nnoremap    [Tag] <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9) 
+    execute 'nnoremap <silent> [Tag]'.n ':<C-u>tabnext'.n.'<CR>' 
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]b :tabprevious<CR>
+" tp 前のタブ
 
 " % jump update
 source $VIMRUNTIME/macros/matchit.vim
@@ -36,6 +81,7 @@ Bundle 'tpope/vim-commentary'
 
 "Unite IDE
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-gerp'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite-outline'
 
@@ -52,10 +98,11 @@ Bundle 'nanotech/jellybeans.vim'
 colorscheme jellybeans 
 :syntax enable
 
+
 """"""""""""""""""""""""""""""""
 "VimFiler Toggle
 """"""""""""""""""""""""""""""""
-nnoremap <silent> <C-k> <ESC>:VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+nnoremap <silent> <C-k> <ESC>:VimFiler -buffer-name=explorer -split -winwidth=90 -toggle -no-quit<Cr>
 autocmd! FileType vimfiler call g:my_vimfiler_settings() 
 function! g:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
@@ -82,4 +129,4 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 "Unite outline Toggle
 """"""""""""""""""""""""""""""""
 let g:unite_split_rule = 'botright'
-noremap <silent> <C-l> <ESC>:<C-u>Unite -vertical -winwidth=35 outline<CR>
+noremap <silent> <C-l> <ESC>:<C-u>Unite -vertical -winwidth=90 outline<CR>
