@@ -72,8 +72,15 @@ map <silent> [Tag]b :tabprevious<CR>
 source $VIMRUNTIME/macros/matchit.vim
 
 "Vundle and plugins
-set rtp+=~/dotfiles/.vim/vundle/
-call vundle#rc()
+set rtp+=$HOME/dotfiles/.vim/vundle/
+
+if has('win32') || has('win64')
+  let $DOTVIM = expand('$HOME/vimfiles')
+else
+  let $DOTVIM = expand('~/.vim')
+endif
+
+call vundle#rc('$DOTVIM/bundle')
 
 """Must plugin 
 "add operator cmd '\\' for comment
@@ -81,7 +88,6 @@ Bundle 'tpope/vim-commentary'
 
 "Unite IDE
 Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/unite-gerp'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite-outline'
 
