@@ -100,7 +100,7 @@ Bundle 'lilydjwg/colorizer'
 
 "Color Scheme
 Bundle 'nanotech/jellybeans.vim'
-colorscheme jellybeans 
+colorscheme jellybeans
 :syntax enable
 
 
