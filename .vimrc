@@ -109,8 +109,8 @@ colorscheme jellybeans
 "VimFiler Toggle
 """"""""""""""""""""""""""""""""
 nnoremap <silent> <C-k> <ESC>:VimFiler -buffer-name=explorer -split -winwidth=90 -toggle -no-quit<Cr>
-autocmd! FileType vimfiler call g:my_vimfiler_settings() 
-function! g:my_vimfiler_settings()
+autocmd! FileType vimfiler call s:my_vimfiler_settings() 
+function! s:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
   nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
   nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
@@ -134,5 +134,5 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 """"""""""""""""""""""""""""""""
 "Unite outline Toggle
 """"""""""""""""""""""""""""""""
-let g:unite_split_rule = 'botright'
+let s:unite_split_rule = 'botright'
 noremap <silent> <C-l> <ESC>:<C-u>Unite -vertical -winwidth=90 outline<CR>
