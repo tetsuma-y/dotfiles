@@ -16,6 +16,7 @@ set number
 set nocompatible
 set list
 set colorcolumn=80
+set hlsearch
 filetype off
 
 " for gVim
@@ -26,9 +27,9 @@ set guioptions-=m
 set clipboard+=unnamed
 
 " some key remap
-noremap Q <Nop> 
-nnoremap : q:a
+noremap Q <Nop>
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+
 
 " Anywhere SID.
 function! s:SID_PREFIX()
@@ -159,9 +160,3 @@ nnoremap <silent> ;G :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 " grep検索結果の再呼出
 nnoremap <silent> ;r  :<C-u>UniteResume search-buffer<CR>
 
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-    let g:unite_source_grep_recursive_opt = ''
-endif
