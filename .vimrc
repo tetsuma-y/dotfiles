@@ -1,7 +1,10 @@
-"valid ident
+"valid indent
 :filetype indent on
+
+"valid backspace
 set backspace=2
 set backspace=indent,eol,start
+
 " タブ幅の設定
 set tabstop=4
 set shiftwidth=4
@@ -18,6 +21,9 @@ filetype off
 " for gVim
 set guioptions-=T
 set guioptions-=m
+
+" clipboard
+set clipboard+=unnamed
 
 " some key remap
 noremap Q <Nop> 
@@ -152,3 +158,10 @@ nnoremap <silent> ;G :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 
 " grep検索結果の再呼出
 nnoremap <silent> ;r  :<C-u>UniteResume search-buffer<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+    let g:unite_source_grep_recursive_opt = ''
+endif

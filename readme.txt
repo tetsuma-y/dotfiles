@@ -1,11 +1,11 @@
-Vim 7.3����
-7.4�ȍ~�Ag: �֐���error�ɂȂ��Ă��܂��l�q�B�����ς�����患
+Linux/Cygwin
+シンボリックリンクで.vim->.vimと.vimrc->.vimrcをhome以下につくる。
+vimproc,ag は自分でbuildする必要がある。
+agはそのままだと文字コードによっては検索対象にはいらないため、buildする前に要修正。
+http://blog.monochromegane.com/blog/2013/09/15/the-silver-searcher-detects-japanese-char-set/
 
-
-
-Linux
-�V���{���b�N�����N��.vim->.vim��.vimrc->.vimrc��home�ȉ��ɂ���B
 
 Windows
-�V���{���b�N�����N��.vim->vimfiles .vimrc->_vimrc��home�ȉ��ɂ���
-Windows�̃V���{���b�N�����N��FullPath�łȂ��Ƃ��߂��ۂ��̂Œ��ӁB
+シンボリックリンクで.vim->vimfiles .vimrc->_vimrcをhome以下につくる
+WindowsのシンボリックリンクはFullPathでないとだめっぽいので注意。
+
