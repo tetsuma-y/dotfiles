@@ -108,7 +108,7 @@ colorscheme jellybeans
 """"""""""""""""""""""""""""""""
 "VimFiler Toggle
 """"""""""""""""""""""""""""""""
-nnoremap <silent> ,f <ESC>:VimFiler -buffer-name=explorer -winwidth=90 -toggle<Cr>
+nnoremap <silent> ;f <ESC>:VimFiler -buffer-name=explorer<Cr>
 autocmd! FileType vimfiler call s:my_vimfiler_settings() 
 function! s:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
@@ -135,8 +135,7 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 "Unite outline Toggle
 """"""""""""""""""""""""""""""""
 let s:unite_split_rule = 'botright'
-noremap <silent> ,o <ESC>:<C-u>Unite -winwidth=90 outline<CR>
-
+noremap ;o <ESC>:<C-u>Unite -winwidth=90 outline<CR>
 
 """"""""""""""""""""""""""""""""
 "Unite-grep setting
@@ -146,10 +145,10 @@ let s:unite_enable_ignore_case = 1
 let s:unite_enable_smart_case = 1
 
 " grep検索
-nnoremap <silent> ,g :<C-u>Unite grep: -buffer-name=search-buffer<CR>
+nnoremap <silent> ;g  :<C-u>Unite grep:% -buffer-name=search-buffer<CR>
 
 " カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep: -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> ;G :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 
 " grep検索結果の再呼出
-nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> ;r  :<C-u>UniteResume search-buffer<CR>
