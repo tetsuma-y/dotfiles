@@ -111,9 +111,8 @@ Bundle 'nanotech/jellybeans.vim'
 colorscheme jellybeans
 :syntax enable
 
-
 """"""""""""""""""""""""""""""""
-"VimFiler Toggle
+"VimFiler
 """"""""""""""""""""""""""""""""
 nnoremap <silent> ;f <ESC>:VimFiler -buffer-name=explorer<Cr>
 autocmd! FileType vimfiler call s:my_vimfiler_settings() 
@@ -139,7 +138,7 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 
 
 """"""""""""""""""""""""""""""""
-"Unite outline Toggle
+"Unite outline
 """"""""""""""""""""""""""""""""
 let s:unite_split_rule = 'botright'
 noremap ;o <ESC>:<C-u>Unite -winwidth=90 outline<CR>
@@ -151,10 +150,10 @@ noremap ;o <ESC>:<C-u>Unite -winwidth=90 outline<CR>
 let s:unite_enable_ignore_case = 1
 let s:unite_enable_smart_case = 1
 
-" grep検索
+" current bufferに対してgrep
 nnoremap <silent> ;g  :<C-u>Unite grep:% -buffer-name=search-buffer<CR>
 
-" カーソル位置の単語をgrep検索
+" 範囲を指定してgrep
 nnoremap <silent> ;G :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 
 " grep検索結果の再呼出
