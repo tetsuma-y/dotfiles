@@ -1,6 +1,7 @@
 "valid ident
 :filetype indent on
-
+set backspace=2
+set backspace=indent,eol,start
 " タブ幅の設定
 set tabstop=4
 set shiftwidth=4
@@ -78,7 +79,7 @@ else
   let $DOTVIM = expand('~/.vim')
 endif
 
-set rtp+=$DOTVIM/vundle
+set rtp+=$DOTVIM/Vundle.vim
 call vundle#rc('$DOTVIM/bundle')
 
 """Must plugin 
@@ -141,8 +142,8 @@ noremap <silent> ,o <ESC>:<C-u>Unite -winwidth=90 outline<CR>
 "Unite-grep setting
 """"""""""""""""""""""""""""""""
 " 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
+let s:unite_enable_ignore_case = 1
+let s:unite_enable_smart_case = 1
 
 " grep検索
 nnoremap <silent> ,g :<C-u>Unite grep: -buffer-name=search-buffer<CR>
