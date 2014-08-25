@@ -1,3 +1,11 @@
+Vundle.vimは、別途以下から持ってくる
+https://github.com/gmarik/Vundle.vim
+
+/dotfiles で
+git clone https://github.com/gmarik/Vundle.vim
+をする。
+
+
 Linux/Cygwin
 シンボリックリンクで.vim->.vimと.vimrc->.vimrcをhome以下につくる。
 vimprocは自分でbuildする必要がある。
