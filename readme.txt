@@ -1,7 +1,7 @@
 Vundle.vimは、別途以下から持ってくる
 https://github.com/gmarik/Vundle.vim
 
-/dotfiles で
+/dotfiles/.vim で
 git clone https://github.com/gmarik/Vundle.vim
 をする。
 
