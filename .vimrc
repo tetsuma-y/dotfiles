@@ -107,9 +107,14 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'lilydjwg/colorizer'
 
 "Color Scheme
+:syntax enable
+:set t_Co=256
 Bundle 'nanotech/jellybeans.vim'
 colorscheme jellybeans
-:syntax enable
+set background=dark
+
+"Syntax Check
+Bundle 'scrooloose/syntastic'
 
 """"""""""""""""""""""""""""""""
 "VimFiler
@@ -159,3 +164,14 @@ nnoremap <silent> ;G :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 " grep検索結果の再呼出
 nnoremap <silent> ;r  :<C-u>UniteResume search-buffer<CR>
 
+
+Bundle 'teramako/jscomplete-vim'
+Bundle 'myhere/vim-nodejs-complete'
+
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+if !exists('g:neocomplcache_omni_functions')
+      let g:neocomplcache_omni_functions = {}
+  endif
+  let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+
+  let g:node_usejscomplete = 1
