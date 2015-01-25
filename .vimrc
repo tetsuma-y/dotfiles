@@ -1,5 +1,6 @@
 "valid indent
 :filetype indent on
+:filetype plugin on
 
 "valid backspace
 set backspace=2
@@ -116,6 +117,7 @@ set background=dark
 
 "Syntax Check
 Bundle 'scrooloose/syntastic'
+let g:syntastic_ruby_checkers = ['rubocop']
 
 """"""""""""""""""""""""""""""""
 "VimFiler
