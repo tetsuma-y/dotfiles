@@ -6,8 +6,8 @@ set backspace=2
 set backspace=indent,eol,start
 
 " タブ幅の設定
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " 表示系
@@ -116,6 +116,7 @@ set background=dark
 
 "Syntax Check
 Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/google.vim'
 
 """"""""""""""""""""""""""""""""
 "VimFiler
