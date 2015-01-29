@@ -117,8 +117,11 @@ set background=dark
 
 "Syntax Check
 Bundle 'scrooloose/syntastic'
+<<<<<<< HEAD
 Bundle 'vim-scripts/google.vim'
+=======
 let g:syntastic_ruby_checkers = ['rubocop']
+>>>>>>> b7bc9c71f82e3b63c6f0a3febca3135236accec4
 
 """"""""""""""""""""""""""""""""
 "VimFiler
