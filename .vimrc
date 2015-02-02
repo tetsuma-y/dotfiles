@@ -119,6 +119,11 @@ set background=dark
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/google.vim'
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_mode_map={ 'mode': 'passive',
+                        \ 'active_filetypes': ['python', 'ruby', 'javascript', 'json'],
+                        \ 'passive_filetypes': []
+                        \}
+
 
 """"""""""""""""""""""""""""""""
 "VimFiler
