@@ -104,12 +104,9 @@ Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/vimshell.vim'
 Bundle 'Shougo/vimproc'
 
-"WEB Develop
+"For WEB Develop
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'lilydjwg/colorizer'
-
-"ruby develop
-Bundle 'astashov/vim-ruby-debugger'
 
 "Color Scheme
 :syntax enable
@@ -120,13 +117,11 @@ set background=dark
 
 "Syntax Check
 Bundle 'scrooloose/syntastic'
+<<<<<<< HEAD
 Bundle 'vim-scripts/google.vim'
+=======
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_mode_map={ 'mode': 'passive',
-                        \ 'active_filetypes': ['python', 'ruby', 'javascript', 'json'],
-                        \ 'passive_filetypes': []
-                        \}
-
+>>>>>>> b7bc9c71f82e3b63c6f0a3febca3135236accec4
 
 """"""""""""""""""""""""""""""""
 "VimFiler
