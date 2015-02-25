@@ -104,9 +104,12 @@ Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/vimshell.vim'
 Bundle 'Shougo/vimproc'
 
-"For WEB Develop
+"WEB Develop
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'lilydjwg/colorizer'
+
+"ruby develop
+Bundle 'astashov/vim-ruby-debugger'
 
 "Color Scheme
 :syntax enable
