@@ -104,6 +104,9 @@ Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/vimshell.vim'
 Bundle 'Shougo/vimproc'
 
+"C++ Develop
+Bundle 'rhysd/vim-clang-format'
+
 "WEB Develop
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'lilydjwg/colorizer'
@@ -127,6 +130,11 @@ let g:syntastic_mode_map={ 'mode': 'passive',
                         \ 'passive_filetypes': []
                         \}
 
+""""""""""""""""""""""""""""""""
+"ClangFormat
+""""""""""""""""""""""""""""""""
+nnoremap <silent> ;c  :<C-u>ClangFormat<CR>
+let g:clang_format#code_style = 'google'
 
 """"""""""""""""""""""""""""""""
 "VimFiler
