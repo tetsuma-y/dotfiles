@@ -5,6 +5,11 @@ https://github.com/gmarik/Vundle.vim
 git clone https://github.com/gmarik/Vundle.vim
 をする。
 
+C++向けに clang がvim-clang-formatで必要
+#yum install clang
+
+ruby向けにrubocopが必要
+#gem install rubocop
 
 Linux/Cygwin
 シンボリックリンクで.vim->.vimと.vimrc->.vimrcをhome以下につくる。
