@@ -99,6 +99,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite-outline'
+Bundle 'Shougo/unite-build'
 
 "vimshell
 Bundle 'Shougo/vimshell.vim'
@@ -123,11 +124,13 @@ set background=dark
 
 "Syntax Check
 Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/google.vim'
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_c_clang_check_post_args = ""
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_clang_check_post_args = ""
 let g:syntastic_mode_map={ 'mode': 'passive',
-                        \ 'active_filetypes': ['python', 'ruby', 'javascript', 'c', 'cpp', 'json'],
+                        \ 'active_filetypes': ['python', 'ruby', 'javascript',
+                        \                      'c', 'cpp', 'json'],
                         \ 'passive_filetypes': []
                         \}
 """"""""""""""""""""""""""""""""
@@ -163,10 +166,19 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 
 
 """"""""""""""""""""""""""""""""
-"Unite outline
+"Unite Common
 """"""""""""""""""""""""""""""""
 let s:unite_split_rule = 'botright'
-noremap ;o <ESC>:<C-u>Unite -winwidth=90 outline<CR>
+
+""""""""""""""""""""""""""""""""
+"Unite build
+""""""""""""""""""""""""""""""""
+noremap ;b <ESC>:<C-u>Unite -winwidth=90 build<CR>
+""""""""""""""""""""""""""""""""
+
+"Unite outline
+""""""""""""""""""""""""""""""""
+noremap ;o <ESC>:<C-u>Unite -no-quit -winwidth=90 outline<CR>
 
 """"""""""""""""""""""""""""""""
 "Unite-grep setting
@@ -176,13 +188,13 @@ let s:unite_enable_ignore_case = 1
 let s:unite_enable_smart_case = 1
 
 " current bufferに対してgrep
-nnoremap <silent> ;g  :<C-u>Unite grep:% -buffer-name=search-buffer<CR>
+nnoremap <silent> ;g <ESC>:<C-u>Unite grep:% -no-quit -buffer-name=search-buffer<CR>
 
 " 範囲を指定してgrep
-nnoremap <silent> ;G :<C-u>Unite grep: -buffer-name=search-buffer<CR>
+nnoremap <silent> ;G <ESC>:<C-u>Unite grep: -buffer-name=search-buffer<CR>
 
 " grep検索結果の再呼出
-nnoremap <silent> ;r  :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> ;r <ESC>:<C-u>UniteResume search-buffer<CR>
 
 
 ""javascript sup
