@@ -125,11 +125,11 @@ set background=dark
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/google.vim'
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_c_clang_check_post_args = ""
 let g:syntastic_mode_map={ 'mode': 'passive',
-                        \ 'active_filetypes': ['python', 'ruby', 'javascript', 'json'],
+                        \ 'active_filetypes': ['python', 'ruby', 'javascript', 'c', 'cpp', 'json'],
                         \ 'passive_filetypes': []
                         \}
-
 """"""""""""""""""""""""""""""""
 "ClangFormat
 """"""""""""""""""""""""""""""""
