@@ -5,6 +5,9 @@ https://github.com/gmarik/Vundle.vim
 git clone https://github.com/gmarik/Vundle.vim
 をする。
 
+unite-outlineをするためには、
+C++ではctagsが必要
+
 C++向けに clang がvim-clang-formatで必要
 #yum install clang
 
