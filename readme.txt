@@ -9,14 +9,10 @@ unite-outlineをするためには、
 C++ではctagsが必要
 
 Gtagsの設定
-http://blog.matsumoto-r.jp/?p=2369
 http://www.gnu.org/software/global/
+https://github.com/hewes/unite-gtags
 CtagsはやめてGtags(GNU GLOBAL)へ移行しよう！
 
-Ctagsの設定
-1. ソースの一番rootなところで ctags -R * を実行
-2. ~/.vimrcに :set tags=.tags; を追加
-3. ~/.bashrcに alias ctags='ctags -f .tags' を追加
 
 C++向けに clang がvim-clang-formatで必要
 #yum install clang
