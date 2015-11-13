@@ -100,6 +100,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/unite-build'
+Bundle 'hewes/unite-gtags'
 
 "vimshell
 Bundle 'Shougo/vimshell.vim'
@@ -133,6 +134,12 @@ let g:syntastic_mode_map={ 'mode': 'passive',
                         \                      'c', 'cpp', 'json'],
                         \ 'passive_filetypes': []
                         \}
+""""""""""""""""""""""""""""""""
+"GNU GLOBAL
+""""""""""""""""""""""""""""""""
+nnoremap <C-g> :Unite gtags/def<CR>
+nnoremap <C-h> :Unite gtags/ref<CR>
+
 """"""""""""""""""""""""""""""""
 "ClangFormat
 """"""""""""""""""""""""""""""""
