@@ -8,10 +8,11 @@ git clone https://github.com/gmarik/Vundle.vim
 unite-outlineをするためには、
 C++ではctagsが必要
 
-Ctagsの設定
-1. ソースの一番rootなところで ctags -R * を実行
-2. ~/.vimrcに :set tags=.tags; を追加
-3. ~/.bashrcに alias ctags='ctags -f .tags' を追加
+Gtagsの設定
+http://www.gnu.org/software/global/
+https://github.com/hewes/unite-gtags
+CtagsはやめてGtags(GNU GLOBAL)へ移行しよう！
+
 
 C++向けに clang がvim-clang-formatで必要
 #yum install clang
