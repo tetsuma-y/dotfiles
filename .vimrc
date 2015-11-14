@@ -135,12 +135,6 @@ let g:syntastic_mode_map={ 'mode': 'passive',
                         \ 'passive_filetypes': []
                         \}
 """"""""""""""""""""""""""""""""
-"GNU GLOBAL
-""""""""""""""""""""""""""""""""
-nnoremap <C-g> :Unite gtags/def<CR>
-nnoremap <C-h> :Unite gtags/ref<CR>
-
-""""""""""""""""""""""""""""""""
 "ClangFormat
 """"""""""""""""""""""""""""""""
 nnoremap <silent> ;c  :<C-u>ClangFormat<CR>
@@ -175,34 +169,23 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 """"""""""""""""""""""""""""""""
 "Unite Common
 """"""""""""""""""""""""""""""""
-let s:unite_split_rule = 'botright'
+let g:unite_split_rule = 'botright'
 
 """"""""""""""""""""""""""""""""
 "Unite build
 """"""""""""""""""""""""""""""""
 noremap ;b <ESC>:<C-u>Unite -winwidth=90 build<CR>
 """"""""""""""""""""""""""""""""
-
 "Unite outline
 """"""""""""""""""""""""""""""""
-noremap ;o <ESC>:<C-u>Unite -no-quit -winwidth=90 outline<CR>
+noremap ;o <ESC>:<C-u>Unite -vertical -no-quit -winwidth=90 outline<CR>
 
 """"""""""""""""""""""""""""""""
-"Unite-grep setting
+"GNU GLOBAL
 """"""""""""""""""""""""""""""""
-" 大文字小文字を区別しない
-let s:unite_enable_ignore_case = 1
-let s:unite_enable_smart_case = 1
-
-" current bufferに対してgrep
-nnoremap <silent> ;g <ESC>:<C-u>Unite grep:% -no-quit -buffer-name=search-buffer<CR>
-
-" 範囲を指定してgrep
-nnoremap <silent> ;G <ESC>:<C-u>Unite grep: -buffer-name=search-buffer<CR>
-
-" grep検索結果の再呼出
-nnoremap <silent> ;r <ESC>:<C-u>UniteResume search-buffer<CR>
-
+nnoremap <silent> ;d <ESC>:Unite -vertical gtags/def<CR>
+nnoremap <silent> ;r <ESC>:Unite -vertical gtags/ref<CR>
+nnoremap <silent> ;g <ESC>:Unite -vertical gtags/grep<CR>
 
 ""javascript sup
 Bundle 'myhere/vim-nodejs-complete'
