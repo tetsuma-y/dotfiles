@@ -129,6 +129,7 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_clang_check_post_args = ""
+let g:syntastic_cpp_compiler_options="-std=c++14 -stdlib=libc++"
 let g:syntastic_mode_map={ 'mode': 'passive',
                         \ 'active_filetypes': ['python', 'ruby', 'javascript',
                         \                      'c', 'cpp', 'json'],
