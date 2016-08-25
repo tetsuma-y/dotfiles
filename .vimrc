@@ -7,9 +7,10 @@ set backspace=2
 set backspace=indent,eol,start
 
 " タブ幅の設定
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
+set listchars=tab:\ \ ,eol:$
 
 " 表示系
 set encoding=utf-8

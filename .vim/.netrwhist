@@ -1,6 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/Tetsuma/WorkSpace/my-app/www'
-let g:netrw_dirhist_2='/cygdrive/c/Users/Tetsuma/vimfiles'
-let g:netrw_dirhist_3='/home/Tetsuma/the_silver_searcher/src'
-let g:netrw_dirhist_4='/home/tetsuma/.config'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/0000132397/git-work/KT/Camera-EC_171H/YdetLevel'
