@@ -2,6 +2,10 @@
 :filetype indent on
 :filetype plugin on
 
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 "valid backspace
 set backspace=2
 set backspace=indent,eol,start
@@ -13,8 +17,6 @@ set expandtab
 set listchars=tab:\ \ ,eol:$
 
 " 表示系
-set encoding=utf-8
-set fileencodings=sjis,euc-jp,utf-8
 set number
 set nocompatible
 set list
@@ -125,17 +127,17 @@ colorscheme jellybeans
 set background=dark
 
 "Syntax Check
-Bundle 'scrooloose/syntastic'
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_no_include_search = 1
-let g:syntastic_cpp_clang_check_post_args = ""
-let g:syntastic_cpp_compiler_options="-std=c++14 -stdlib=libc++"
-let g:syntastic_mode_map={ 'mode': 'passive',
-                        \ 'active_filetypes': ['python', 'ruby', 'javascript',
-                        \                      'c', 'cpp', 'json'],
-                        \ 'passive_filetypes': []
-                        \}
+"#Bundle 'scrooloose/syntastic'
+"#let g:syntastic_ruby_checkers = ['rubocop']
+"#let g:syntastic_cpp_check_header = 1
+"#let g:syntastic_cpp_no_include_search = 1
+"#let g:syntastic_cpp_clang_check_post_args = ""
+"#let g:syntastic_cpp_compiler_options="-std=c++14 -stdlib=libc++"
+"#let g:syntastic_mode_map={ 'mode': 'passive',
+"#                        \ 'active_filetypes': ['python', 'ruby', 'javascript',
+"#                        \                      'c', 'cpp', 'json'],
+"#                        \ 'passive_filetypes': []
+"#                        \}
 """"""""""""""""""""""""""""""""
 "ClangFormat
 """"""""""""""""""""""""""""""""
