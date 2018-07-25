@@ -8,8 +8,6 @@ git clone https://github.com/gmarik/Vundle.vim
 unite-outlineをするためには、
 C++ではctagsが必要
 
-clip board へ yank は必須
-#sudo apt install xsel
 
 Gtagsの設定
 http://www.gnu.org/software/global/
