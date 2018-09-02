@@ -1,3 +1,5 @@
+nvim 移行で更新終了
+
 Vundle.vimは、別途以下から持ってくる
 https://github.com/gmarik/Vundle.vim
 
